@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  main 
+    .button-container 
+      a(href=`http://localhost:${process.env.PORT || 3000}/new`): button.compose= "New Message"
+    h1= title 
+    each message in messages 
+      h3.user= message.user 
+      div.text= message.text
+      div.added=message.added
